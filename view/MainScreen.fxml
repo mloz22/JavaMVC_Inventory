@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="890.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="370.0" layoutX="8.0" layoutY="111.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
+
+      <!-- IMS Label-->
+      <Label layoutX="8.0" layoutY="39.0" text="Inventory Management System">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+      <!-- Parts Search -->
+      <TextField fx:id="partSearchText" alignment="CENTER_RIGHT" layoutX="190.0" layoutY="122.0" onKeyTyped="#onSearchPart" prefHeight="25.0" prefWidth="206.0" promptText="Search by Part ID or Name">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+      
+      <!-- Parts Secion-->
+      <Label fx:id="parts_section_label" layoutX="29.0" layoutY="125.0" text="Parts">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+
+      <TableView fx:id="partsTableView" layoutX="29.0" layoutY="149.0" prefHeight="200.0" prefWidth="369.0">
+         <columns>
+            <TableColumn fx:id="partId" prefWidth="59.0" text="Part ID" />
+            <TableColumn fx:id="partName" prefWidth="91.0" text="Part Name" />
+            <TableColumn fx:id="partStock" prefWidth="96.0" text="Inventory Level" />
+            <TableColumn fx:id="partPrice" prefWidth="122.0" text="Price/ Cost per Unit" />
+         </columns>
+      </TableView>
+
+
+      <Button fx:id="add_part" layoutX="29.0" layoutY="352.0" mnemonicParsing="false" onAction="#onAddPart" prefHeight="20.0" prefWidth="50.0" text="Add" />
+
+
+      <Button fx:id="modify_part" layoutX="86.0" layoutY="352.0" mnemonicParsing="false" onAction="#onModifyPart" prefHeight="20.0" prefWidth="75.0" text="Modify" />
+
+
+
+      <Button fx:id="delete_part" layoutX="328.0" layoutY="352.0" mnemonicParsing="false" onAction="#onDeletePart" prefHeight="20.0" prefWidth="70.0" text="Delete" />
+
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="370.0" layoutX="442.0" layoutY="111.0" stroke="BLACK" strokeType="INSIDE" width="420.0" />
+
+      <!-- Products Search -->
+      <TextField fx:id="productSearchText" alignment="CENTER_RIGHT" layoutX="622.0" layoutY="123.0" onKeyTyped="#onSearchProduct" prefHeight="25.0" prefWidth="206.0" promptText="Search by Product ID or Name">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextField>
+
+      <!-- Products Secion -->
+      <Label fx:id="products_section_label" layoutX="457.0" layoutY="125.0" text="Products">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+
+      <TableView fx:id="productsTableView" layoutX="459.0" layoutY="149.0" prefHeight="200.0" prefWidth="369.0">
+         <columns>
+            <TableColumn fx:id="productId" prefWidth="67.0" text="Product ID" />
+            <TableColumn fx:id="productName" prefWidth="89.0" text="Product Name" />
+            <TableColumn fx:id="productStock" prefWidth="97.0" text="Inventory Level" />
+            <TableColumn fx:id="productPrice" prefWidth="115.0" text="Price/ Cost per Unit" />
+         </columns>
+      </TableView>
+
+
+      <Button layoutX="459.0" layoutY="352.0" mnemonicParsing="false" onAction="#onAddProduct" prefHeight="20.0" prefWidth="50.0" text="Add" />
+
+
+      <Button layoutX="519.0" layoutY="352.0" mnemonicParsing="false" onAction="#onModifyProduct" prefHeight="20.0" prefWidth="75.0" text="Modify" />
+
+
+
+      <Button layoutX="758.0" layoutY="352.0" mnemonicParsing="false" onAction="#onDeleteProduct" prefHeight="20.0" prefWidth="70.0" text="Delete" />
+
+      <!-- Exception -->
+      <Label fx:id="partException" alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="19.0" layoutY="455.0" prefHeight="86.0" prefWidth="301.0" text="" textFill="RED" />
+      <Label fx:id="productException" alignment="BOTTOM_LEFT" contentDisplay="TOP" layoutX="464.0" layoutY="455.0" prefHeight="86.0" prefWidth="301.0" text="" textFill="RED" />
+
+      <!-- Exit Section-->
+      <!-- This label can be deleted-->
+
+      <Button layoutX="780.0" layoutY="535.0" mnemonicParsing="false" onAction="#onExit" prefHeight="20.0" prefWidth="50.0" text="Exit" />
+
+
+
+   </children>
+</AnchorPane>

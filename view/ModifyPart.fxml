@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<!-- TODO
+      1. Adjust the layout
+      2. Radio Buttons
+      3. Editable Fields
+
+-->
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyPartController">
+    <!-- Modify Part-->
+    <Label layoutX="10.0" layoutY="20.0" prefHeight="27.0" prefWidth="102.0" text="Modify Part">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+
+    <RadioButton fx:id="inHouseRadio" layoutX="127.0" layoutY="25.0" mnemonicParsing="false" onAction="#onInHouse" selected="true" text="In-House" toggleGroup="$partSource" >
+        <toggleGroup>
+            <ToggleGroup fx:id="partSource" />
+        </toggleGroup>
+    </RadioButton>
+    <RadioButton fx:id="outSourcedRadio" layoutX="212.0" layoutY="25.0" mnemonicParsing="false" onAction="#onOutSourced" text="Outsourced" toggleGroup="$partSource" />
+
+    <Label layoutX="47.0" layoutY="69.0" text="ID">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partIdText" disable="true" editable="false" layoutX="80.0" layoutY="65.0" promptText="Auto Gen- Disabled">
+      <font>
+         <Font name="System Italic" size="12.0" />
+      </font></TextField>
+
+
+    <Label layoutX="29.0" layoutY="106.0" text="Name">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partNameText" layoutX="80.0" layoutY="102.0" prefHeight="25.0" prefWidth="200.0" />
+
+    <Label layoutX="45.0" layoutY="141.0" text="Inv">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partStockText" layoutX="80.0" layoutY="137.0" prefHeight="25.0" prefWidth="96.0" />
+
+    <Label layoutX="10.0" layoutY="177.0" text="Price/Cost">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partPriceText" layoutX="80.0" layoutY="173.0" prefHeight="25.0" prefWidth="96.0" />
+
+    <Label layoutX="41.0" layoutY="217.0" text="Max">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partMaxText" layoutX="80.0" layoutY="213.0" prefHeight="25.0" prefWidth="96.0" />
+
+    <Label layoutX="182.0" layoutY="217.0" text="Min">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partMinText" layoutX="214.0" layoutY="213.0" prefHeight="25.0" prefWidth="83.0" />
+
+    <Label fx:id="toggleSource" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="257.0" prefHeight="17.0" prefWidth="96.0" text="Machine ID">
+        <font>
+            <Font size="12.0" />
+        </font>
+    </Label>
+    <TextField fx:id="partSourceText" layoutX="120.0" layoutY="253.0" prefHeight="25.0" prefWidth="121.0" />
+
+
+    <Button layoutX="334.0" layoutY="357.0" mnemonicParsing="false" onAction="#onSaveModifyPartButtonAction" prefHeight="20.0" prefWidth="50.0" text="Save" />
+
+   
+
+    <Button layoutX="417.0" layoutY="357.0" mnemonicParsing="false" onAction="#onCancelModifyPartButtonAction" prefHeight="20.0" prefWidth="75.0" text="Cancel" />
+
+    <!-- Exception -->
+    <Label fx:id="fieldException" alignment="BOTTOM_LEFT" contentDisplay="CENTER" layoutX="19.0" layoutY="297.0" prefHeight="86.0" prefWidth="301.0" text="" textFill="RED" />
+
+</AnchorPane>
